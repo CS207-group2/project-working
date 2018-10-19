@@ -2,7 +2,7 @@ import pytest
 import dual
 import numpy as np
 
-## Addition operation test
+## Unary operation test
 def test__neg__():
     x = dual.Dual(3)
     f = -x
