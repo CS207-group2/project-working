@@ -13,7 +13,7 @@ class AutoDiff:
 
         returns
         ------
-
+	derivates in the same shape given
         """
         ders = []
         sig = inspect.signature(self.fn)
