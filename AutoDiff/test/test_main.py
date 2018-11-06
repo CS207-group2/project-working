@@ -1,6 +1,6 @@
 from AutoDiff import AutoDiff
 import admath
-
+#from ..dual.dual import Dual
 
 def square_fn(x):
     return x ** 2
