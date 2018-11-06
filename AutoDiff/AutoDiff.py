@@ -13,7 +13,7 @@ class AutoDiff:
 
         returns
         ------
-	derivates in the same shape given
+
         """
         ders = []
         sig = inspect.signature(self.fn)
@@ -43,6 +43,5 @@ class AutoDiff:
         else:
             a = Dual(val)
             return self.fn(a).der
-
 
        
