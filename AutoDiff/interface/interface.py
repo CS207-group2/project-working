@@ -1,5 +1,6 @@
-from Dual.dual import Dual
+from ..dual.dual import Dual
 import inspect
+
 class AutoDiff:
     def __init__(self, fn):
         self.fn = fn

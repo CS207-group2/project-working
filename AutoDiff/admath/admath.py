@@ -1,4 +1,4 @@
-from Dual.dual import Dual
+from ..dual.dual import Dual
 import math
 
 def sin(x):
