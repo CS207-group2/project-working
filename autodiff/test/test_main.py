@@ -1,4 +1,6 @@
-from AutoDiff import AutoDiff
+# from AutoDiff import AutoDiff
+from autodiff.interface.interface import AutoDiff
+from autodiff.dual.dual import Dual
 import admath
 #from ..dual.dual import Dual
 
