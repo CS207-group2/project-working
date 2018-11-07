@@ -62,17 +62,11 @@ Overload `__rmul__` to account for:
 ### Division operation
 Overload `__truediv__` to account for:
 
-$$ \dfrac{d}{dx}\Big[\dfrac{a(x)}{u}\Big]= \dfrac{a^\prime}{u} $$
-
 ![equation](http://latex.codecogs.com/gif.latex?%5Cdfrac%7Bd%7D%7Bdx%7D%5CBig%5B%5Cdfrac%7Ba%28x%29%7D%7Bu%7D%5CBig%5D%3D%20%5Cdfrac%7Ba%5E%5Cprime%7D%7Bu%7D)
-
-$$ \dfrac{d}{dx}\Big[\dfrac{a(x)}{u(x)}\Big]= -\dfrac{a^\prime u - a u^\prime}{{u(x)}^2}$$
 
 ![equation](http://latex.codecogs.com/gif.latex?%5Cdfrac%7Bd%7D%7Bdx%7D%5CBig%5B%5Cdfrac%7Ba%28x%29%7D%7Bu%28x%29%7D%5CBig%5D%3D%20-%5Cdfrac%7Ba%5E%5Cprime%20u%20-%20a%20u%5E%5Cprime%7D%7B%7Bu%28x%29%7D%5E2%7D)
 
 Overload `__rtruediv__` to account for:
-
-$$ \dfrac{d}{dx}\Big[\dfrac{a}{u(x)}\Big]= -\dfrac{a}{{u(x)}^2} u^\prime $$
 
 ![equation](http://latex.codecogs.com/gif.latex?%5Cdfrac%7Bd%7D%7Bdx%7D%5CBig%5B%5Cdfrac%7Ba%7D%7Bu%28x%29%7D%5CBig%5D%3D%20-%5Cdfrac%7Ba%7D%7B%7Bu%28x%29%7D%5E2%7D%20u%5E%5Cprime)
 
@@ -80,16 +74,10 @@ $$ \dfrac{d}{dx}\Big[\dfrac{a}{u(x)}\Big]= -\dfrac{a}{{u(x)}^2} u^\prime $$
 ### Power operation
 Overload `__pow__` to account for:
 
-$$ \dfrac{d}{dx} a(x)^n = n a^{n-1} a^{\prime}$$
-
 ![equation](http://latex.codecogs.com/gif.latex?%5Cdfrac%7Bd%7D%7Bdx%7D%20a%28x%29%5En%20%3D%20n%20a%5E%7Bn-1%7D%20a%5E%7B%5Cprime%7D)
-
-$$ \dfrac{d}{dx} a(x)^{u(x)} = a^{u-1} \Big[u a^\prime + a \log(a) u^\prime \Big]$$
 
 ![equation](http://latex.codecogs.com/gif.latex?%5Cdfrac%7Bd%7D%7Bdx%7D%20a%28x%29%5E%7Bu%28x%29%7D%20%3D%20a%5E%7Bu-1%7D%20%5CBig%5Bu%20a%5E%5Cprime%20&plus;%20a%20%5Clog%28a%29%20u%5E%5Cprime%20%5CBig%5D)
 
 Overload `__rpow__` to account for:
-
-$$ \dfrac{d}{dx} a^{u(x)} = log(a) a^{u(x)} u^\prime $$
 
 ![equation](http://latex.codecogs.com/gif.latex?%5Cdfrac%7Bd%7D%7Bdx%7D%20a%5E%7Bu%28x%29%7D%20%3D%20log%28a%29%20a%5E%7Bu%28x%29%7D%20u%5E%5Cprime)
