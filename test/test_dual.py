@@ -1,5 +1,5 @@
 import pytest
-import dual
+from autodiff.dual import dual
 import numpy as np
 
 ## Unary operation test
