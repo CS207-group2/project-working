@@ -15,7 +15,7 @@ We provide full implementations off all binary differentiable operations with du
 
 Operations 1 is already implemented by Python, hence we only need to implement operations 2 through 4.
 
-In the class AutoDiff.Dual we will implement the following binary operations:
+In the class ``autodiff.dual`` we will implement the following binary operations:
 * Addition
 * Substration
 * Multiplication
