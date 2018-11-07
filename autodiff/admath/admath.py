@@ -91,3 +91,20 @@ def exp(x):
         return x
     else:
         return np.exp(x)
+
+
+def sqrt(x):
+    """Calculate the square root of the input
+
+        Keyword arguments:
+        x -- a real number or a dual number
+
+        Return:
+        the exponential value
+        """
+    if (isinstance(x,Dual)):
+        x.der = 0.5/np.sqrt(x.val) * x.der
+        x.val = np.sqrt(x.val)
+        return x
+    else:
+        return np.sqrt(x)
