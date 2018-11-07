@@ -1,0 +1,19 @@
+[
+  "test/test_dual.py::test__neg__",
+  "test/test_dual.py::test__pos__",
+  "test/test_dual.py::test1__add__",
+  "test/test_dual.py::test2__add__",
+  "test/test_dual.py::test__radd__",
+  "test/test_dual.py::test1__sub__",
+  "test/test_dual.py::test2__sub__",
+  "test/test_dual.py::test__rsub__",
+  "test/test_dual.py::test1__mul__",
+  "test/test_dual.py::test2__mul__",
+  "test/test_dual.py::test__rmul__",
+  "test/test_dual.py::test1__truediv__",
+  "test/test_dual.py::test2__truediv__",
+  "test/test_dual.py::test__rtruediv__",
+  "test/test_dual.py::test1__pow__",
+  "test/test_dual.py::test2__pow__",
+  "test/test_dual.py::test__rpow__"
+]

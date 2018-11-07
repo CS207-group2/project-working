@@ -1,4 +1,4 @@
-from ..dual.dual import Dual
+from autodiff.dual.dual import Dual
 import inspect
 
 class AutoDiff:
@@ -14,7 +14,7 @@ class AutoDiff:
 
         returns
         ------
-	derivates in the same shape given
+        derivates in the same shape given
         """
         ders = []
         sig = inspect.signature(self.fn)
