@@ -1,24 +1,4 @@
-<style TYPE="text/css">
-code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
-</style>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
-    }
-});
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-});
-</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-
-# AutoDiff.Dual
+#AutoDiff.Dual
 
 ## Implementation of unary operations
 We implemented the following unary operations:
@@ -47,6 +27,8 @@ Below are the derivative formula for each operation. Dual numbers are marked as 
 ### Addition operation
 Overload `__add__` to account for:
 $$ \dfrac{d}{dx}\Big[a(x) + u\Big]= a^\prime $$
+![first equation](http://latex.codecogs.com/gif.latex?%5Cdfrac%7Bd%7D%7Bdx%7D%5CBig%5Ba%28x%29%20&plus;%20u%5CBig%5D%3D%20a%5E%5Cprime)
+
 $$ \dfrac{d}{dx}\Big[a(x) + u(x)\Big]= a^\prime + u^\prime$$
 Overload `__radd__` to account for:
 $$ \dfrac{d}{dx}\Big[a + u(x)\Big]= u^\prime $$
