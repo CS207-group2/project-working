@@ -1,19 +1,15 @@
-from AutoDiff import AutoDiff
-import admath
-
-
-def square_fn(x):
-    return x ** 2
-
+import pytest
+from autodiff.dual import dual
+import autodiff.admath.admath as math
+import numpy as np
 
 def sin_fn(x):
-    return admath.sin(5*x)+2*x**2
+    return math.sin(x)
 
-ad_square = AutoDiff(square_fn)
-print(ad_square.get_der(3))
-
-print(ad_square.get_der([1,2]))
-
-ad_sin = AutoDiff(sin_fn)
-print(ad_sin.get_der(2))
-# Evaluates derivative of sin(5x)+2x^2 when x = 2
+def test__sin_fn__():
+    x = dual.Dual(0)
+    f = sin_fn(x)
+    assert f.val == 0
+    assert f.der == 1
+    
+    
