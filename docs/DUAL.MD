@@ -1,4 +1,4 @@
-# AutoDiff.Dual
+# autodiff.dual
 
 ## Implementation of unary operations
 We implemented the following unary operations:
