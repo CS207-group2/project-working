@@ -42,6 +42,40 @@ def loge(x):
     else:
         return np.log(x)
 
+def log10(x):
+    """Calculate the log10 of the input
+
+        Keyword arguments:
+        x -- a real number or a dual number
+
+        Return:
+        the log10 value
+    """
+    if (isinstance(x,Dual)):
+        x.der = (1/x.val)*x.der
+        x.val = np.log10(x.val)
+        return x
+    else:
+        return np.log10(x)
+
+
+def log2(x):
+    """Calculate the log2 of the input
+
+        Keyword arguments:
+        x -- a real number or a dual number
+
+        Return:
+        the log2 value
+    """
+    if (isinstance(x,Dual)):
+        x.der = (1/x.val)*x.der
+        x.val = np.log2(x.val)
+        return x
+    else:
+        return np.log2(x)
+
+
 def exp(x):
     """Calculate the exponential of the input
 
