@@ -25,7 +25,7 @@ def cos(x):
     else:
         return np.cos(x)
 
-def loge(x):
+def log(x):
     """Calculate the natural log of the input
 
         Keyword arguments:
@@ -51,7 +51,7 @@ def log10(x):
         the log10 value
     """
     if (isinstance(x,Dual)):
-        x.der = (1/x.val)*x.der
+        x.der = (1/(x.val*np.log(10)))*x.der
         x.val = np.log10(x.val)
         return x
     else:
@@ -68,7 +68,7 @@ def log2(x):
         the log2 value
     """
     if (isinstance(x,Dual)):
-        x.der = (1/x.val)*x.der
+        x.der = (1/(x.val*np.log(2)))*x.der
         x.val = np.log2(x.val)
         return x
     else:
@@ -85,7 +85,7 @@ def exp(x):
         the exponential value
         """
     if (isinstance(x,Dual)):
-        x.der = x.val * np.log(x.val) *x.der
+        x.der = np.exp(x.val) * x.der
         x.val = np.exp(x.val)
         return x
     else:
@@ -99,7 +99,7 @@ def sqrt(x):
         x -- a real number or a dual number
 
         Return:
-        the exponential value
+        the square root value
         """
     if (isinstance(x,Dual)):
         x.der = 0.5/np.sqrt(x.val) * x.der
