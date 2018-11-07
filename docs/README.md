@@ -4,14 +4,18 @@ This package can automatically differentiate a function input into the program. 
 The major application of automatic differentiation is gradient-based optimization, which is commonly used as the foundation of neural nets.
 
 # How to use your package
-  - How to install?  Even (especially) if the package isn't on `PyPI`, you should walk them through
+  <!-- - How to install?  Even (especially) if the package isn't on `PyPI`, you should walk them through
     the creation of a virtual environment or some other kind of manual installation.
   - Include a basic demo for the user.  Come up with a simple function to differentiate and walk the
-    user through the steps needed to accomplish that task.
-
+    user through the steps needed to accomplish that task. -->
+    
 ## How to install?
 Currently, a user can install the package by following the steps below:
-1. Create a virtual environment `python3 -m venv /path/to/new/virtual/env`
+1. Go to your project directory and create a virtual environment `python3 -m virtualenv env`
+* you might need to download `virtualenv` if you do not have it.
+2. Download the package from our GitHub [repository](https://github.com/CS207-group2/cs207-FinalProject/) to your virtual environment
+<!-- 3. Move the package to the virtual environment -->
+3. run `python setup.py install`
 
 ## How to use *Autodiff*?
 The user can use AutoDiff by passing a function to the AutoDiff constructor to create an AutoDiff object. Then, the user can evaluate the derivative of that function at a certain value by passing in that value to the object. This object can then be called to return the derivative of the function evaluated at that point.
