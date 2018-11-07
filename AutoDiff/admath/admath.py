@@ -52,8 +52,8 @@ def exp(x):
         the exponential value
         """
     if (isinstance(x,Dual)):
-        x.der = *x.der
-        x.val = np.cos(x.val)
+        x.der = x.val * np.log(x.val) *x.der
+        x.val = np.exp(x.val)
         return x
     else:
-        return np.cos(x)
+        return np.exp(x)
