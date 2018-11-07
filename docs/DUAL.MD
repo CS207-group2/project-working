@@ -27,44 +27,36 @@ Below are the derivative formula for each operation. Dual numbers are marked as 
 ### Addition operation
 Overload `__add__` to account for:
 
-$$ \dfrac{d}{dx}\Big[a(x) + u\Big]= a^\prime $$
-
 ![equation](http://latex.codecogs.com/gif.latex?%5Cdfrac%7Bd%7D%7Bdx%7D%5CBig%5Ba%28x%29%20&plus;%20u%5CBig%5D%3D%20a%5E%5Cprime)
-
-$$ \dfrac{d}{dx}\Big[a(x) + u(x)\Big]= a^\prime + u^\prime$$
 
 ![equation](http://latex.codecogs.com/gif.latex?%5Cdfrac%7Bd%7D%7Bdx%7D%5CBig%5Ba%28x%29%20&plus;%20u%28x%29%5CBig%5D%3D%20a%5E%5Cprime%20&plus;%20u%5E%5Cprime)
 
 Overload `__radd__` to account for:
-
-$$ \dfrac{d}{dx}\Big[a + u(x)\Big]= u^\prime $$
 
 ![equation](http://latex.codecogs.com/gif.latex?%5Cdfrac%7Bd%7D%7Bdx%7D%5CBig%5Ba%20&plus;%20u%28x%29%5CBig%5D%3D%20u%5E%5Cprime)
 
 ### Substration operation
 Overload `__sub__` to account for:
 
-$$ \dfrac{d}{dx}\Big[a(x) - u\Big]= a^\prime $$
-
 ![equation](http://latex.codecogs.com/gif.latex?%5Cdfrac%7Bd%7D%7Bdx%7D%5CBig%5Ba%28x%29%20-%20u%5CBig%5D%3D%20a%5E%5Cprime)
-
-$$ \dfrac{d}{dx}\Big[a(x) - u(x)\Big]= a^\prime - u^\prime$$
 
 ![equation](http://latex.codecogs.com/gif.latex?%5Cdfrac%7Bd%7D%7Bdx%7D%5CBig%5Ba%28x%29%20-%20u%28x%29%5CBig%5D%3D%20a%5E%5Cprime%20-%20u%5E%5Cprime)
 
 Overload `__rsub__` to account for:
-
-$$ \dfrac{d}{dx}\Big[a - u(x)\Big]= - u^\prime $$
 
 ![equation](http://latex.codecogs.com/gif.latex?%5Cdfrac%7Bd%7D%7Bdx%7D%5CBig%5Ba%20-%20u%28x%29%5CBig%5D%3D%20-%20u%5E%5Cprime)
 
 
 ### Multiplication operation
 Overload `__mul__` to account for:
-$$ \dfrac{d}{dx}\Big[a(x)u\Big]= u a^\prime $$
-$$ \dfrac{d}{dx}\Big[a(x)u(x)\Big]= a^\prime u + a u^\prime$$
+
+![equation](http://latex.codecogs.com/gif.latex?%5Cdfrac%7Bd%7D%7Bdx%7D%5CBig%5Ba%28x%29u%5CBig%5D%3D%20u%20a%5E%5Cprime)
+
+![equation](http://latex.codecogs.com/gif.latex?%5Cdfrac%7Bd%7D%7Bdx%7D%5CBig%5Ba%28x%29u%28x%29%5CBig%5D%3D%20a%5E%5Cprime%20u%20&plus;%20a%20u%5E%5Cprime)
+
 Overload `__rmul__` to account for:
-$$ \dfrac{d}{dx}\Big[au(x)\Big]= a u^\prime $$
+
+![equation](http://latex.codecogs.com/gif.latex?%5Cdfrac%7Bd%7D%7Bdx%7D%5CBig%5Bau%28x%29%5CBig%5D%3D%20a%20u%5E%5Cprime)
 
 
 ### Division operation
