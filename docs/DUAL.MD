@@ -1,4 +1,4 @@
-#AutoDiff.Dual
+# AutoDiff.Dual
 
 ## Implementation of unary operations
 We implemented the following unary operations:
@@ -6,12 +6,12 @@ We implemented the following unary operations:
 
 ## Implementation of binary operations
 
-We provide full implementations off all binary differentiable operations with dual and non-dual numbers. When we want to operate a with $u$, $ a \circ u$, we have 4 possibities: 
+We provide full implementations off all binary differentiable operations with dual and non-dual numbers. When we want to operate a with u, thus we have 4 possibities: 
 
-1. $a$ and $u$ are both scalars
-2. $a$ is a dual number, $b$ is a scalar
-3. $a$ is a scalar, $b$ is a dual number
-4. $a$ and $u$ are both dula numbers
+1. a and u are both scalars
+2. a is a dual number, b is a scalar
+3. a is a scalar, b is a dual number
+4. a and u are both dula numbers
 
 Operations 1 is already implemented by Python, hence we only need to implement operations 2 through 4.
 
@@ -27,9 +27,13 @@ Below are the derivative formula for each operation. Dual numbers are marked as 
 ### Addition operation
 Overload `__add__` to account for:
 $$ \dfrac{d}{dx}\Big[a(x) + u\Big]= a^\prime $$
+
 ![first equation](http://latex.codecogs.com/gif.latex?%5Cdfrac%7Bd%7D%7Bdx%7D%5CBig%5Ba%28x%29%20&plus;%20u%5CBig%5D%3D%20a%5E%5Cprime)
 
 $$ \dfrac{d}{dx}\Big[a(x) + u(x)\Big]= a^\prime + u^\prime$$
+
+![first equation](http://latex.codecogs.com/gif.latex?%5Cdfrac%7Bd%7D%7Bdx%7D%5CBig%5Ba%28x%29%20&plus;%20u%28x%29%5CBig%5D%3D%20a%5E%5Cprime%20&plus;%20u%5E%5Cprime)
+
 Overload `__radd__` to account for:
 $$ \dfrac{d}{dx}\Big[a + u(x)\Big]= u^\prime $$
 
