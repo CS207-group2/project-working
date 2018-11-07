@@ -23,7 +23,7 @@ class AutoDiff:
         =======
         >>> a = AutoDiff(lambda x,y: 5*x + 4*y)
         >>> a.get_der([[6.7, 4],[2,3],[4.5,6]])
-        >>> [[5, 4], [5, 4], [5, 4]]
+        [[5, 4], [5, 4], [5, 4]]
         """
         ders = []
         if self.ndim >1:
