@@ -12,10 +12,10 @@ def sin(x):
 
 def cos(x):
     """Calculate cosine of the input
-        
+
         Keyword arguments:
         x -- a real number or a dual number
-        
+
         Return:
         the cosine value
     """
@@ -26,12 +26,12 @@ def cos(x):
     else:
         return np.cos(x)
 
-def log(x):
+def loge(x):
     """Calculate the natural log of the input
-        
+
         Keyword arguments:
         x -- a real number or a dual number
-        
+
         Return:
         the natural log value
     """
@@ -44,10 +44,10 @@ def log(x):
 
 def exp(x):
     """Calculate the exponential of the input
-        
+
         Keyword arguments:
         x -- a real number or a dual number
-        
+
         Return:
         the exponential value
         """
