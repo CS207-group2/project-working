@@ -8,7 +8,7 @@ The major application of automatic differentiation is gradient-based optimizatio
     the creation of a virtual environment or some other kind of manual installation.
   - Include a basic demo for the user.  Come up with a simple function to differentiate and walk the
     user through the steps needed to accomplish that task. -->
-    
+
 ## How to install?
 Currently, a user can install the package by following the steps below:
 1. Go to your project directory and create a virtual environment `python3 -m virtualenv env`
@@ -21,7 +21,6 @@ Currently, a user can install the package by following the steps below:
 The user can use AutoDiff by passing a function to the AutoDiff constructor to create an AutoDiff object. Then, the user can evaluate the derivative of that function at a certain value by passing in that value to the object. This object can then be called to return the derivative of the function evaluated at that point.
 
 Scalar function case:
-
 ```python
 >>> import AutoDiff
 >>> def square_fn(x):
