@@ -8,7 +8,7 @@ def sin(x):
         return x
     else:
         return np.sin(x)
-    
+
 def cos(x):
     """Calculate cosine of the input
 
