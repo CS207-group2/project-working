@@ -1,14 +1,14 @@
 from autodiff.dual.dual import Dual as Dual
-import math
+import numpy as np
 
 def sin(x):
     if (isinstance(x,Dual)):
-        x.der = math.cos(x.val)*x.der
-        x.val = math.sin(x.val)
+        x.der = np.cos(x.val)*x.der
+        x.val = np.sin(x.val)
         return x
     else:
-        return math.sin(x)
-    
+        return np.sin(x)
+
 def cos(x):
     """Calculate cosine of the input
 
