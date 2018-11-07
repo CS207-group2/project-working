@@ -1,1 +1,5 @@
+<<<<<<< Updated upstream
 !coverage.py: This is a private format, don't read it directly!{"lines":{"/Users/maleah/project-working/AutoDiff/__init__.py":[1],"/Users/maleah/project-working/AutoDiff/AutoDiff.py":[1],"/Users/maleah/project-working/AutoDiff/admath.py":[1],"/Users/maleah/project-working/AutoDiff/test_main.py":[1],"/Users/maleah/project-working/AutoDiff/Dual/__init__.py":[1],"/Users/maleah/project-working/AutoDiff/Dual/dual.py":[1,3,5,12,15,21,27,33,39,45,53,59,70,76,89],"/Users/maleah/project-working/AutoDiff/Dual/test_dual.py":[1,2,3,6,12,21,27,33,43,49,55,65,71,77,87,93,99,109,115,121],"/Users/maleah/project-working/dual.py":[1,3,5,12,15,21,27,33,39,45,53,59,70,76,89]}}
+=======
+!coverage.py: This is a private format, don't read it directly!{"lines":{"/Users/maleah/project-working/AutoDiff/__init__.py":[1],"/Users/maleah/project-working/AutoDiff/test/test_dual.py":[1,2],"/Users/maleah/project-working/AutoDiff/test/test_main.py":[1]}}
+>>>>>>> Stashed changes

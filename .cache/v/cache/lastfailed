@@ -1,0 +1,13 @@
+{
+  "AutoDiff/AutoDiff.py": true,
+  "AutoDiff/Dual/__init__.py": true,
+  "AutoDiff/Dual/dual.py": true,
+  "AutoDiff/__init__.py": true,
+  "AutoDiff/admath/__init__.py": true,
+  "AutoDiff/admath/admath.py": true,
+  "AutoDiff/interface/__init__.py": true,
+  "AutoDiff/interface/interface.py": true,
+  "AutoDiff/setup.py": true,
+  "AutoDiff/test/test_dual.py": true,
+  "AutoDiff/test/test_main.py": true
+}
