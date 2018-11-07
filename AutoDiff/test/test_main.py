@@ -18,6 +18,7 @@ ad_sin = AutoDiff(sin_fn)
 print(ad_sin.get_der(2))
 # Evaluates derivative of sin(5x)+2x^2 when x = 2
 
+# test for cosine
 def cos_fn(x): # trial cosine function to feed into AutoDiff
     return admath.cos(-3*x) + 3*x
 
