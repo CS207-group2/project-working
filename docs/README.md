@@ -1,0 +1,78 @@
+# Introduction
+This package can automatically differentiate a function input into the program. By applying the chain rule repeatedly to these operations, derivatives of arbitrary order can be computed automatically, accurately to machine accuracy. It currently supports forward-mode differentiation.
+
+The major application of automatic differentiation is gradient-based optimization, which is commonly used as the foundation of neural nets.
+
+# How to use your package
+  - How to install?  Even (especially) if the package isn't on `PyPI`, you should walk them through
+    the creation of a virtual environment or some other kind of manual installation.
+  - Include a basic demo for the user.  Come up with a simple function to differentiate and walk the
+    user through the steps needed to accomplish that task.
+
+## How to install?
+Currently, a user can install the package by following the steps below:
+1. Create a virtual environment `python3 -m venv /path/to/new/virtual/env`
+
+## How to use *Autodiff*?
+The user can use AutoDiff by passing a function to the AutoDiff constructor to create an AutoDiff object. Then, the user can evaluate the derivative of that function at a certain value by passing in that value to the object. This object can then be called to return the derivative of the function evaluated at that point.
+
+Scalar function case:
+
+```python
+>>> import AutoDiff
+>>> def square_fn(x):
+...	return x ** 2
+>>> ad_square = AutoDiff(square_fn)
+>>> ad_square.get_der(3)
+6
+```
+
+Vector function case:
+```python
+>>> import AutoDiff
+>>> def square_fn(x):
+...	return x ** 2
+>>> ad_square = AutoDiff(square_fn)
+>>> ad_square.get_der([1,2])
+np.array([2,4])
+```
+
+In cases where the user wants to use operations such as sin/cos, they should call those functions from the AutoDiff library so that the derivative can be automatically computed.
+
+SINE, COSINE, EXPONENTIAL function case:
+```python
+>>> import AutoDiff
+>>> def sin_fn(x):
+...	return Autodiff.sin(x)
+>>> ad_sin = AutoDiff(sin_fn)
+>>> ad_sin.get_der(0)
+1
+```
+
+# Background
+Automatic differentiation breaks down any function into its elementary functions using a graph structure and calculates the derivative while retaining the function by using dual numbers. This is accomplished by substituting (x + ɛ x-prime) for x in f(x).
+
+As the steps of the graph structure become successively more complex, the derivatives of the preceding steps are used to compute the derivatives.
+
+The chain rule is important for increasing the robustness of the automatic differentiation class, especially because it allows for the class to calculate the derivative of compositions (which are an important part of approximating non-linear functions).
+
+# Software organization
+  - High-level overview of how the software is organized.
+    * Directory structure
+    * Basic modules and what they do
+    * Where do tests live?  How are they run?  How are they integrated?
+    * How can someone install your package?  At this point, it is okay if your package isn't on
+      `PyPI`.  If it's not, then you should describe how someone can download and install your
+      package manually.
+
+# Implementation details
+  - Description of current implementation.  This section goes deeper than the high level software
+    organization section.
+    * Try to think about the following:
+      - Core data structures
+      - Core classes
+      - Important attributes
+      - External dependencies
+      - Elementary functions
+    This is similar to what you did for milestone 1, but now you've actually implemented it.
+  - What aspects have you not implemented yet?  What else do you plan on implementing?
