@@ -1,6 +1,6 @@
 import pytest
 from autodiff.interface.interface import AutoDiff as AD
-import autodiff.admath.admath as math
+import autodiff.admath.admath as admath
 
 def my_fn_2d(x, y):
 	return [x**2 + y**2, x + 2+y]
@@ -31,7 +31,7 @@ def test_func_w_mult_params_single_var():
 
 def square_fn(x):
         return x ** 2
-    
+
 def test_square_fn():
 	ad_square = AD(square_fn)
 	der = ad_square.get_der(3)
