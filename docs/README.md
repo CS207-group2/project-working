@@ -82,13 +82,13 @@ Dual number is a concept in linear algebra. Dual numbers extend the real numbers
                interface/
                     __init__.py
                     interface.py
-         test/
+         test\
               __init__.py
               .coverage
               test_admath.py
               test_dual.py
               test_interface.py
-         docs/
+         docs\
               admath.md
               dual.md
               interface.md
