@@ -63,9 +63,43 @@ As the steps of the graph structure become successively more complex, the deriva
 
 The chain rule is important for increasing the robustness of the automatic differentiation class, especially because it allows for the class to calculate the derivative of compositions (which are an important part of approximating non-linear functions).
 
+## Dual number
+Dual number is a concept in linear algebra. Dual numbers extend the real numbers by adding with the property
+
 # Software organization
 - High-level overview of how the software is organized.
   * Directory structure
+  ```
+   FinalProject\
+         autodiff\
+               __init__.py
+               admath/
+                    __init__.py
+                    admath.py
+               dual/
+                    __init__.py
+                    dual.py
+               interface/
+                    __init__.py
+                    interface.py
+         test/
+              __init__.py
+              .coverage
+              test_admath.py
+              test_dual.py
+              test_interface.py
+         docs/
+              admath.md
+              dual.md
+              interface.md
+              README.md
+         README.md
+         setup.py
+         LICENSE.txt
+         .gitignore
+         .travis.yml
+         setup.cfg
+  ```
   * Basic modules and what they do
     * `admath`
       * this is the module for math computation. It leverages numpy library and provides functions including elementary functions (exponential, log10, log2, loge, sin, cos)
