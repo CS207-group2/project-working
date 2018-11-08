@@ -67,11 +67,11 @@ The chain rule is important for increasing the robustness of the automatic diffe
 - High-level overview of how the software is organized.
   * Directory structure
   * Basic modules and what they do
-    * admath
-    * this is the module for math computation. It leverages numpy library and provides functions including elementary functions (exponential, log10, log2, loge, sin, cos)
-    * interface
-    * dual
-    * this is the module for the dual number class.
+    * `admath`
+      * this is the module for math computation. It leverages numpy library and provides functions including elementary functions (exponential, log10, log2, loge, sin, cos)
+    * `interface`
+    * `dual`
+      * this is the module for the dual number class.
   * Where do tests live?  How are they run?  How are they integrated?
     * Tests of this package are in the `test` folder.
     * They are run by `TravisCI` and the coverage is examined by `Coveralls`
