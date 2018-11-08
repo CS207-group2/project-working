@@ -3,6 +3,12 @@ import inspect
 
 class AutoDiff:
     def __init__(self, fn, ndim=1):
+        """
+        fn : function, the function of which we want to calculate the derivative
+        ndim : float, the number of dimensions of the function
+        l : the number of parameters in the function
+            (e.g. in lambda x, y: x**2 + y**2) it would be x,y (so l = 2)
+        """
         self.fn = fn
         self.ndim = ndim
         sig = inspect.signature(self.fn)
