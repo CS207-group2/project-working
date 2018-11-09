@@ -9,6 +9,8 @@
   - [Interface](#Interface-Class)
   - [Dual](#Dual-Class)
   - [Admath](#Admath-Module)
+- [External Dependencies](#External-Dependencies)
+- [Future Implementations](#Future-Implementations)
 
 # Introduction
 Automatic differentiation is a set of techniques to numerically evaluate the derivative of a function specified by a computer program. Automatic differentiation breaks down a function by looking at the sequence of elementary arithmetic operations (addition, subtraction, multiplication and division) and elementary functions (exponential, log10, log2, loge, sin, cos, etc). By applying the chain rule repeatedly to these operations, derivatives of arbitrary order can be computed automatically, accurately to machine accuracy. The major application of automatic differentiation is gradient-based optimization, which is commonly used as the foundation of neural nets.
@@ -161,16 +163,9 @@ We implemented the following functions:
 In cases where x is a scalar, we simply return the numpy equivalent (eg np.sin(x)). When x is dual, we manually set val and der of the dual object. We set the der by figuring out symbolically what the derivative should be (sin(x) should be cos(x)) and applying the chain rule (multiplying x.der to cos(x)). This way, our program can automatically apply the chain rule to our inputs and handle nested functions with ease. Again, like the scalar case, we use numpy to do the actual elemental calculations.
 
 
+# External Dependencies
+- numpy: to perform calculations on elemental functions such as sin and exponent
+- inspect: to determine how many arguments there are to a function, which is necessary for the calculation of the Jacobian matrix
 
-
-
-- Description of current implementation.  This section goes deeper than the high level software
-organization section.
-* Try to think about the following:
-- Core data structures
-- Core classes
-- Important attributes
-- External dependencies
-- Elementary functions
-This is similar to what you did for milestone 1, but now you've actually implemented it.
-- What aspects have you not implemented yet?  What else do you plan on implementing?
+# Future implementations
+TBD
