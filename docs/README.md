@@ -98,9 +98,7 @@ Dual numbers can simply be used by substituting (x + ɛ x') for x in f(x) where 
               test_dual.py
               test_interface.py
          docs\
-              admath.md
               dual.md
-              interface.md
               README.md
          README.md
          setup.py
