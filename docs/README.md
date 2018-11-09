@@ -15,31 +15,31 @@ user through the steps needed to accomplish that task. -->
 
 ## How to install?
 Currently, a user can install the package by following the steps below:
-1. Go to your project directory and create a virtual environment `python3 -m virtualenv env`
+1. Navigate to your project directory and download the package from our GitHub [repository](https://github.com/CS207-group2/cs207-FinalProject/)
+2. Create a virtual environment `python3 -m virtualenv env` in the top-level of your directory
 * you might need to download `virtualenv` if you do not have it.
-2. Download the package from our GitHub [repository](https://github.com/CS207-group2/cs207-FinalProject/) to your virtual environment
-<!-- 3. Move the package to the virtual environment -->
-3. run `python setup.py install`
+3. Type `source env/bin/activate` which activates your virtual environment
+4. run `python setup.py install` which installs Autodiff in your virutal environment
 
 ## How to use *Autodiff*?
 The user can use AutoDiff by passing a function to the AutoDiff constructor to create an AutoDiff object. Then, the user can evaluate the derivative of that function at a certain value by passing in that value to the object. This object can then be called to return the derivative of the function evaluated at that point.
 
 Scalar function case:
 ```python
->>> from autodiff.interface.interface import AutoDiff as AD
+>>> import AutoDiff
 >>> def square_fn(x):
 ...    return x ** 2
->>> ad_square = AD(square_fn)
+>>> ad_square = AutoDiff(square_fn)
 >>> ad_square.get_der(3)
 6
 ```
 
 Vector function case:
 ```python
->>> from autodiff.interface.interface import AutoDiff as AD
+>>> import AutoDiff
 >>> def square_fn(x):
 ...    return x ** 2
->>> ad_square = AD(square_fn)
+>>> ad_square = AutoDiff(square_fn)
 >>> ad_square.get_der([1,2])
 np.array([2,4])
 ```
@@ -48,22 +48,23 @@ In cases where the user wants to use operations such as sin/cos, they should cal
 
 SINE, COSINE, EXPONENTIAL function case:
 ```python
->>> from autodiff.interface.interface import AutoDiff as AD
->>> import autodiff.admath.admath as admath
-
+>>> import AutoDiff
 >>> def sin_fn(x):
-...    return AD.sin(x)
+...    return Autodiff.sin(x)
 >>> ad_sin = AutoDiff(sin_fn)
 >>> ad_sin.get_der(0)
 1
 ```
 
 # Background
-Automatic differentiation breaks down any function into its elementary functions using a graph structure, where every node is an operation, and calculates the derivative on top of the numerical value. The simultaneous value and derivative calculation is accomplished by using dual numbers, which are numbers have an additional component ɛ on top of its real component (called dual component).
+Automatic differentiation breaks down any function into its elementary functions using a graph structure and calculates the derivative while retaining the function by using dual numbers. This is accomplished by substituting (x + ɛ x-prime) for x in f(x).
 
-Dual numbers can simply be used by substituting (x + ɛ x') for x in f(x) where f can be any one operation. The important idea is that after every mathematical operation, the real part will represent the numerical value of the expression and the dual part will reflect the derivative. This property makes it very convenient for derivative calculations of heavily nested functions because of the chain rule in derivative calculation which states that the derivative of f(g(x)) is f'(g(x)) * g'(x). Since the derivative of a nested function relies on both the value and the derivative of the inner function, we can see that the automatic storage of both the value and derivative after every operation is very convenient for this task.
+As the steps of the graph structure become successively more complex, the derivatives of the preceding steps are used to compute the derivatives.
 
+The chain rule is important for increasing the robustness of the automatic differentiation class, especially because it allows for the class to calculate the derivative of compositions (which are an important part of approximating non-linear functions).
 
+## Dual number
+Dual number is a concept in linear algebra. Dual numbers extend the real numbers by adding the element ε (with the property ε^2 = 0).
 
 # Software organization
 - High-level overview of how the software is organized.
@@ -114,43 +115,6 @@ Dual numbers can simply be used by substituting (x + ɛ x') for x in f(x) where 
     * We plan to distribute the package through `PyPI` in the near future
 
 # Implementation details
-Currently, the autodiff package contains 2 classes and 1 module.
-
-### interface Class
-#### Usage
-Interface is our main class where an instance of our class can be instantiated by passing in a function. Next, the user can pass in a scalar or a list of numbers into the get_der method to evaluate the derivative(s) of the function with respect to the point(s). Furthermore, our class supports multivariable differentiation, where the user can write a multivariable function, pass in a 2d list where each list represents the derivative calculation at each value, and get back the Jacobian matrix.
-
-#### Implementation
-Interface
-
-
-### dual Class
-#### Usage
-The dual class represents a dual number. The user does not have to explicitly instantiate it to use our package as it will be instantiated by the Interface class automatically.
-
-#### Implementation
-The dual object contains val and der attributes, representing the numerical value and derivative respectively. It contains dunder methods to handle all basic math operations such as add, multiply, power, in cases where both numbers being added are dual numbers (eg a+b where both a and b are dual) as well as in cases where the left or the right side of the expression is a scalar (eg a+b where a is scalar and b is dual).
-
-### admath Module
-#### Usage
-This admath module performs both value and derivative calculations of elemental functions, such as trig and exponential, for the dual class. We use the same function names as numpy to allow for easier usability for people already used to numpy. The functions in this module also work with scalars.
-
-#### Implementation
-We implemented the following functions:
-- sin(x)
-- cos(x)
-- log(x)
-- log10(x)
-- log2(x)
-- exp(x)
-- sqrt(x)
-
-In cases where x is a scalar, we simply return the numpy equivalent (eg np.sin(x)). When x is dual, we manually set val and der of the dual object. We set the der by figuring out symbolically what the derivative should be (sin(x) should be cos(x)) and applying the chain rule (multiplying x.der to cos(x)). This way, our program can automatically apply the chain rule to our inputs and handle nested functions with ease. Again, like the scalar case, we use numpy to do the actual elemental calculations.
-
-
-
-
-
 - Description of current implementation.  This section goes deeper than the high level software
 organization section.
 * Try to think about the following:
