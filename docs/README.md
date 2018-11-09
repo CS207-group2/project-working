@@ -8,7 +8,7 @@
 - [Implementation Details](#Implementation-Details)
   - [Interface](#Interface-Class)
   - [Dual](#Dual-Class)
-  - [Admath](#Admath-Class)
+  - [Admath](#Admath-Module)
 
 # Introduction
 Automatic differentiation is a set of techniques to numerically evaluate the derivative of a function specified by a computer program. Automatic differentiation breaks down a function by looking at the sequence of elementary arithmetic operations (addition, subtraction, multiplication and division) and elementary functions (exponential, log10, log2, loge, sin, cos, etc). By applying the chain rule repeatedly to these operations, derivatives of arbitrary order can be computed automatically, accurately to machine accuracy. The major application of automatic differentiation is gradient-based optimization, which is commonly used as the foundation of neural nets.
