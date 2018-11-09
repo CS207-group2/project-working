@@ -4,4 +4,4 @@
 
 # Autodiff
 
-[Click here to read to docs](docs/README.md)
+[Click here to read the docs](docs/README.md)
