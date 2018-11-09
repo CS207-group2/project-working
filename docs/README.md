@@ -29,8 +29,6 @@ Currently, a user can install the package by following the steps below:
 3. Type `source env/bin/activate` which activates your virtual environment
 4. run `python setup.py install` which installs Autodiff in your virutal environment
 
-
-
 ## How to use *Autodiff*?
 The user can use AutoDiff by passing a function to the AutoDiff constructor to create an AutoDiff object. Then, the user can evaluate the derivative of that function at a certain value by passing in that value to the object. This object can then be called to return the derivative of the function evaluated at that point.
 
@@ -107,13 +105,14 @@ Dual numbers can simply be used by substituting (x + ɛ x') for x in f(x) where 
          .travis.yml
          setup.cfg
   ```
-  * Basic modules and what they do
+  * Modules and classes
     * `admath`
       * this is the module for math computation. It leverages numpy library and provides functions including elementary functions (exponential, log10, log2, loge, sin, cos)
     * `interface`
+      * this is the main class where an instance of our class can be instantiated by passing in a function.
     * `dual`
-      * this is the module for the dual number class.
-  * Where do tests live?  How are they run?  How are they integrated?
+      * this is the class for dual number input, which contains the `val` and `der` attributes that stores the numerical value and derivate respectively.
+  * Test
     * Tests of this package are in the `test` folder.
     * They are run by `TravisCI` and the coverage is examined by `Coveralls`
     * We have embedded the badges in the README of the package
