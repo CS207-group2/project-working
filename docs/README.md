@@ -164,5 +164,7 @@ In cases where x is a scalar, we simply return the numpy equivalent (eg np.sin(x
 - inspect: to determine how many arguments there are to a function, which is necessary for the calculation of the Jacobian matrix
 
 # Future Implementations
+The following are some of the extensions we are thinking about implementing in the future:
 - Newton's method
 - Visualization of the value and derivative at each step of the forward mode
+- Reverse Mode
