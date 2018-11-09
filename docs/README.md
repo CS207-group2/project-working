@@ -1,12 +1,15 @@
+# Contents
+[Introduction] (#Introduction)
+
 
 # Introduction
-Automatic differentiation is a set of techniques to numerically evaluate the derivative of a function specified by a computer program. Automatic differentiation breaks down a function by looking at the sequence of elementary arithmetic operations (addition, subtraction, multiplication and division) and elementary functions (exponential, log10, log2, loge, sin, cos, etc). By applying the chain rule repeatedly to these operations, derivatives of arbitrary order can be computed automatically, accurately to machine accuracy. The major application of automatic differentiation is gradient-based optimization, which is commonly used as the foundation of neural nets.
+Automatic differentiation is a set of techniques to numerically evaluate the derivative of a function specified by a computer program. Automatic differentiation breaks down a function by looking at the sequence of elementary arithmetic operations (addition, subtraction, multiplication and division) and elementary functions (exponential, log10, log2, loge, sin, cos, etc). By applying the chain rule repeatedly to these operations, derivatives of arbitrary order can be computed automatically, accurately to machine accuracy. Some of the areas of application of automatic differentiation is gradient-based optimization, which is widely used to optimize neural networks, as well as Newton's method which requires the calculation of the Jacobian.
 
 This package, `autodiff`, is a package of automatic differentiation, which means it can automatically differentiate a function input into the program.
 
 The package currently supports forward-mode differentiation, which means the chain rule is traversed from inside to outside.
 
-# How to use your package
+# Usage
 
 <!-- - How to install?  Even (especially) if the package isn't on `PyPI`, you should walk them through
 the creation of a virtual environment or some other kind of manual installation.
