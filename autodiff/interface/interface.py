@@ -44,7 +44,7 @@ class AutoDiff:
             if self.l >= 2:
 
                 #for list of lists, each list evaluated at different variables
-                if any(isinstance(el, list) for el in val) is True:
+                if any(isinstance(el, list) for el in val):
                     list_der = []
                     for p in val:
                         list_der.append(self.get_der(p))

@@ -21,11 +21,6 @@ The package currently supports forward-mode differentiation, which means the cha
 
 # Usage
 
-<!-- - How to install?  Even (especially) if the package isn't on `PyPI`, you should walk them through
-the creation of a virtual environment or some other kind of manual installation.
-- Include a basic demo for the user.  Come up with a simple function to differentiate and walk the
-user through the steps needed to accomplish that task. -->
-
 ## Installation
 Currently, a user can install the package by following the steps below:
 1. Navigate to your project directory and download the package from our GitHub [repository](https://github.com/CS207-group2/cs207-FinalProject/)
@@ -136,7 +131,9 @@ Currently, the autodiff package contains 2 classes and 1 module.
 Interface is our main class where an instance of our class can be instantiated by passing in a function. Next, the user can pass in a scalar or a list of numbers into the get_der method to evaluate the derivative(s) of the function with respect to the point(s). Furthermore, our class supports multivariable differentiation, where the user can write a multivariable function, pass in a 2d list where each list represents the derivative calculation at each value, and get back the Jacobian matrix.
 
 #### Implementation
-Interface
+The interface object contains 3 attributes which are fn, ndim, and l. fn represents the function that we want to evaluate a derivative at, ndim is the number of dimensions of the function (how many functions we want to evaluate), and l is the number of variables in the function. While fn is passed into the function and ndim is optionally passed in, l is inferred from fn through the usage of the inspect module.
+
+The get_der function works by first determining which type of an input is given to the function through the usage of ndim and l as well as what type of an argument is passed into the get_der function (whether it's a scalar or a list). The function then handles these cases separately. For the single variable case (l = 1), if function argument is a scalar, then a dual object is instantiated and passed into fn, the function attribute, so that the derivative can be calculated. If the argument is a list, then the same operation done in a scalar is repeatedly done through a for loop and the result will be appended to a list and returned. In the multivariable case (l>1), then the derivative with respect to each variable is calculated separately and appended to the returned list.
 
 
 ### Dual Class
@@ -145,6 +142,8 @@ The dual class represents a dual number. The user does not have to explicitly in
 
 #### Implementation
 The dual object contains val and der attributes, representing the numerical value and derivative respectively. It contains dunder methods to handle all basic math operations such as add, multiply, power, in cases where both numbers being added are dual numbers (eg a+b where both a and b are dual) as well as in cases where the left or the right side of the expression is a scalar (eg a+b where a is scalar and b is dual).
+
+Additional details of the dual class can be found [here](dual.md).
 
 ### Admath Module
 #### Usage
@@ -168,4 +167,5 @@ In cases where x is a scalar, we simply return the numpy equivalent (eg np.sin(x
 - inspect: to determine how many arguments there are to a function, which is necessary for the calculation of the Jacobian matrix
 
 # Future implementations
-TBD
+- Newton's method
+- Visualization of the value and derivative at each step of the forward mode

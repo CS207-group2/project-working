@@ -2,13 +2,6 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/CS207-group2/project-working/badge.svg?branch=master)](https://coveralls.io/github/CS207-group2/project-working?branch=master)
 
+# Autodiff
 
-TODO:
-
--Move admath.py inside admath folder (import doesn't work when I do that for some reason)
-
--tests & docs
-
--add functions into admath
-
--and many more....
+[Click here to read to docs](#docs/README.md)
